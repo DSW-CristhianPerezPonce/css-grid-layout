@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Funciones</title>
+    <style>
+        body{
+            font-family:'Myriad Pro';
+        }
+        .container{
+            display:grid;
+            /*grid-template-columns:25% 200px 25%; /*divide en columnas*/
+            /*grid-template-rows:300px 300px;*/
+             /*grid-template:filas /colunas*/ 
+             /*fr para determanair fracciones repeat es funcion repetir minmax   */
+              grid-template:300px 300px 100px / minmax(10px,1fr) 1fr 1fr; 
+             /* grid-column-gap:30px;/*es para margenes en grilla*/
+              /*grid-row-gap:30px;*/
+              grid-gap:10px;
+
+
+        }
+        .item{
+            background:lightblue;
+            padding:10px;
+            border: 1px solid red;
+
+        }
+            .item:nth-of-type(4) { /*sirve para identifcar un elemento de la grilla especifico*/
+                background: blue;
+                /*  overflow:auto; /*para scrroll automatico*/
+                display: grid;
+                grid-template: 50px 50px 50px / 70px 70px 70px;
+            }
+            .item .item {
+                background:yellow;
+            }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="item">contenido #1</div>
+        <div class="item">contenido #2</div>
+        <div class="item">contenido #3</div>
+        <div class="item">
+            <div class="item">sub #1</div>
+            <div class="item">sub #2</div>
+            <div class="item">sub #3</div>
+            <div class="item">sub #4</div>
+        </div>
+        <div class="item">contenido #5</div>
+        <div class="item">contenido #6</div>
+        <div class="item">contenido #7</div>
+        <div class="item">contenido #8</div>
+        <div class="item">contenido #9</div>
+        <div class="item">contenido #10</div>
+        <div class="item">contenido #11</div>
+        <div class="item">contenido #12</div>
+    </section>
+</body>
+</html>

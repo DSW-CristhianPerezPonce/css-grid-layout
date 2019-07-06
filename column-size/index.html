@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>tamaño de item en columnas</title>
+    <style>
+        body{
+            font-family:'Myriad Pro';
+        }
+        .container{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);/*divide en columnas*/
+            grid-template-rows:repeat(4,1fr);
+            grid-gap:10px;
+            height:100vh;
+
+
+        }
+        .item{
+            background:lightblue;
+            padding:10px;
+            border: 1px solid red;
+
+        }
+            .item:nth-of-type(1) { /*sirve para identifcar un elemento de la grilla especifico*/
+                background: blue;
+                /*  overflow:auto; /*para scrroll automatico*/
+                display: grid;
+                grid-template: 50px 50px 50px / 70px 70px 70px;
+            }
+            .item .item {
+                background:yellow;
+            }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="item">contenido #1</div>
+        <div class="item">contenido #2</div>
+        <div class="item">contenido #3</div>
+        <div class="item">contenido #4</div>
+        <div class="item">contenido #5</div>
+        <div class="item">contenido #6</div>
+        <div class="item">contenido #7</div>
+        <div class="item">contenido #8</div>
+        <div class="item">contenido #9</div>
+        <div class="item">contenido #10</div>
+        <div class="item">contenido #11</div>
+        <div class="item">contenido #12</div>
+    </section>
+</body>
+</html>

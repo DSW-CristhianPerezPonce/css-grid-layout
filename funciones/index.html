@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>areas</title>
+    <style>
+        body{
+            font-family:'Myriad Pro';
+        }
+        .container {
+            display: grid;
+            /*grid-template-columns:25% 200px 25%; /*divide en columnas*/
+            /*grid-template-rows:300px 300px;*/
+            /*grid-template:filas /colunas*/
+            /*fr para determanair fracciones repeat es funcion repetir minmax   */
+            grid-template: 150px 1fr 100px/ 200px 1fr;
+            height:100vh;/*define el alto de la pantalla*/
+            /* grid-column-gap:30px;/*es para margenes en grilla*/
+            /*grid-row-gap:30px;*/
+            grid-gap: 10px;
+            grid-template-areas:"header header"
+                                "left contenido"
+                                "footer footer";
+        }
+        .item{
+            background:lightblue;
+            padding:10px;
+            border: 1px solid red;
+
+        }
+            .item:nth-of-type(4) { /*sirve para identifcar un elemento de la grilla especifico*/
+                background: blue;
+                /*  overflow:auto; /*para scrroll automatico*/
+                display: grid;
+                grid-template: 50px 50px 50px / 70px 70px 70px;
+            }
+            .item .item {
+                background:yellow;
+            }
+            .header{
+                grid-area:header;
+            }
+            .left{
+                grid-area:left;
+            }
+            .contenido{
+                grid-area:contenido;
+            }
+            .footer{
+               grid-area:footer;
+            }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="item header">header</div>
+        <div class="item left">left</div>
+        <div class="item contenido">contenido</div>
+      
+        <div class="item footer">footer</div>
+    </section>
+</body>
+</html>
